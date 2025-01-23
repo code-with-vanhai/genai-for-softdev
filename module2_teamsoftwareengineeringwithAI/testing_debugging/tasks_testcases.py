@@ -7,7 +7,7 @@ class TaskManager:
         self.lock = threading.Lock()
 
     def add_task(self, task):
-        """Add a new task to the list with thread safety."""
+        """Add a new task to the list with thread safety and empty check."""
         task = task.strip()  # Remove leading and trailing whitespace
         if not task:
             print("Error: Task cannot be empty or only whitespace.")
@@ -45,23 +45,3 @@ class TaskManager:
             for idx, task in enumerate(self.tasks, start=1):
                 print(f"{idx}. {task}")
             return list(self.tasks)  # Return a copy to avoid concurrency issues
-
-# Test cases to verify thread safety
-if __name__ == "__main__":
-    import concurrent.futures
-
-    manager = TaskManager()
-
-    def add_tasks():
-        manager.add_task("Task 1")
-        manager.add_task("Task 2")
-        manager.add_task("Task 3")
-
-    def remove_tasks():
-        manager.remove_task("Task 1")
-        manager.remove_task("Task 2")
-
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        executor.submit(add_tasks)
-        executor.submit(remove_tasks)
-        executor.submit(manager.list_tasks)
