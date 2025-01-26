@@ -10,4 +10,5 @@
 ## Module 2 : Team Software Engineering with AI  
     23/01/2025 - Testing and Debugging Strategies  
     23/01/2025 - Move Mindmap to each module  
+    26/01/2025 - Learning Manual testing, functional testing, exploratory testing, performance testing and security testing  
     
