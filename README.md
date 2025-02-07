@@ -13,5 +13,6 @@
     26/01/2025 - Learning Manual testing, functional testing, exploratory testing, performance testing and security testing  
     28/01/2025 - Pass the assignment  
     05/02/2025 - Pass the assignment about documentation  
+    07/02/2025 - Create 2 virtual environment v_env_1 & v_env_2. Install package requests in v_env_1 & requests:2.31.0 in v_env_2  
     
     
