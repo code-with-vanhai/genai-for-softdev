@@ -31,4 +31,4 @@ This repository documents my learning journey in the **GenAI for Software Develo
   - Generated `requirements.txt` for `v_env_1`
   - Used `pip-sync` to synchronize dependencies in `v_env_2`
 
-##### **Dependency Installation Output**
+- **07/02/2025** - Dependency conflicts
