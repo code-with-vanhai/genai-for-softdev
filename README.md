@@ -1,24 +1,34 @@
-# GenAI For Software Development
-## Course in Coursera
-## Module 1 : Introduction GenAI For Software Development
-    11/01/2025 - Learning to transformers  
-    14/01/2025 - Generating code with chatbots  
-    18/01/2025 - Leveraging LLMs for code analysis  
-    20/01/2025 - Learning Trees  
-    20/01/2025 - Learning Graph & Completed the Assignment  
+# GenAI for Software Development
 
-## Module 2 : Team Software Engineering with AI  
-    23/01/2025 - Testing and Debugging Strategies  
-    23/01/2025 - Move Mindmap to each module  
-    26/01/2025 - Learning Manual testing, functional testing, exploratory testing, performance testing and security testing  
-    28/01/2025 - Pass the assignment  
-    05/02/2025 - Pass the assignment about documentation  
-    07/02/2025 - Create 2 virtual environment v_env_1 & v_env_2. Install package requests in v_env_1 & requests:2.31.0 in v_env_2  
-    07/02/2025 - Install pip-tools in two virtual environment. Generate requirements.txt for v_env_1 and using pip-sync to v_env2  
-        Installing collected packages: requests, markupsafe, itsdangerous, blinker, werkzeug, jinja2, flask
-            Attempting uninstall: requests
-                Found existing installation: requests 2.31.0
-                Uninstalling requests-2.31.0:
-                    Successfully uninstalled requests-2.31.0
-        Successfully installed blinker-1.9.0 flask-3.1.0 itsdangerous-2.2.0 jinja2-3.1.5 markupsafe-3.0.2 requests-2.32.3 werkzeug-3.1.3
-    
+## Overview
+This repository documents my learning journey in the **GenAI for Software Development** course on **Coursera**. It covers various aspects of leveraging Generative AI in software development, including code generation, debugging, testing, and automation.
+
+## Course Details
+### **Module 1: Introduction to GenAI for Software Development**
+- **11/01/2025** - Learning about transformers  
+- **14/01/2025** - Generating code with chatbots  
+- **18/01/2025** - Leveraging LLMs for code analysis  
+- **20/01/2025** - Learning Trees  
+- **20/01/2025** - Learning Graphs & Completed the Assignment  
+
+### **Module 2: Team Software Engineering with AI**
+- **23/01/2025** - Testing and debugging strategies  
+- **23/01/2025** - Moving Mindmap to each module  
+- **26/01/2025** - Learning:
+  - Manual testing  
+  - Functional testing  
+  - Exploratory testing  
+  - Performance testing  
+  - Security testing  
+- **28/01/2025** - Passed the assignment  
+- **05/02/2025** - Passed the documentation assignment  
+
+### **Virtual Environment Setup & Dependency Management**
+- **07/02/2025** - Created two virtual environments:  
+  - `v_env_1` → Installed `requests`  
+  - `v_env_2` → Installed `requests==2.31.0`  
+- **07/02/2025** - Installed `pip-tools` and managed dependencies:
+  - Generated `requirements.txt` for `v_env_1`
+  - Used `pip-sync` to synchronize dependencies in `v_env_2`
+
+#### **Dependency Installation Output**
