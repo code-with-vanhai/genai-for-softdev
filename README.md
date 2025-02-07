@@ -23,7 +23,7 @@ This repository documents my learning journey in the **GenAI for Software Develo
 - **28/01/2025** - Passed the assignment  
 - **05/02/2025** - Passed the documentation assignment  
 
-### **Virtual Environment Setup & Dependency Management**
+#### **Virtual Environment Setup & Dependency Management**
 - **07/02/2025** - Created two virtual environments:  
   - `v_env_1` → Installed `requests`  
   - `v_env_2` → Installed `requests==2.31.0`  
@@ -31,4 +31,4 @@ This repository documents my learning journey in the **GenAI for Software Develo
   - Generated `requirements.txt` for `v_env_1`
   - Used `pip-sync` to synchronize dependencies in `v_env_2`
 
-#### **Dependency Installation Output**
+##### **Dependency Installation Output**
