@@ -35,3 +35,4 @@ This repository documents my learning journey in the **GenAI for Software Develo
 
 ### **Module 3: AI-Powered Software and System Design**
 - **12/02/2025** - Data Serialization and Configuration-Driven Development  
+- **17/02/2025** - Using the DALL-E API  
