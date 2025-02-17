@@ -32,3 +32,6 @@ This repository documents my learning journey in the **GenAI for Software Develo
   - Used `pip-sync` to synchronize dependencies in `v_env_2`
 
 - **07/02/2025** - Dependency conflicts
+
+### **Module 3: AI-Powered Software and System Design**
+- **12/02/2025** - Data Serialization and Configuration-Driven Development  

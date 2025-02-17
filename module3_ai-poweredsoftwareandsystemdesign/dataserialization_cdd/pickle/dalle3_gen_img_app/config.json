@@ -1,0 +1,16 @@
+{
+    "api": {
+      "key": "your-dalle-api-key",
+      "base_url": "https://api.openai.com/v1/images/generations"
+    },
+    "settings": {
+      "model": "dall-e-3",
+      "n": 1,
+      "size": "1024x1024"
+    },
+    "logging": {
+      "level": "info",
+      "file": "app.log"
+    }
+  }
+  
