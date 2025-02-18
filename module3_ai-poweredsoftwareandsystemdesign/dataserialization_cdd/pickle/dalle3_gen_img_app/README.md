@@ -160,5 +160,3 @@ If you run into any issues:
 Happy coding! 🚀🎨
 
 ---
-
-This `README.md` is now **beginner-friendly** and explains **every detail clearly**! Let me know if you want to customize anything. 🚀

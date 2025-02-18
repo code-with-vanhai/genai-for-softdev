@@ -52,6 +52,7 @@ class DalleApp:
         self.image_url = None  # Store image URL
 
     def generate_image(self):
+        """Generate image using OpenAI DALL-E 3."""
         prompt = self.entry_prompt.get().strip()
         if not prompt:
             messagebox.showerror("Error", "Please enter a prompt.")
@@ -62,14 +63,14 @@ class DalleApp:
                 "Content-Type": "application/json",
                 "Authorization": f"Bearer {api_key}"
             }
-            payload = {
+            request_payload = {
                 "model": model,
                 "prompt": prompt,
                 "n": n_images,
                 "size": image_size
             }
 
-            response = requests.post(api_url, headers=headers, json=payload)
+            response = requests.post(api_url, headers=headers, json=request_payload)
 
             if response.status_code != 200:
                 messagebox.showerror("Error", f"Failed to generate image: {response.text}")
@@ -87,10 +88,17 @@ class DalleApp:
             # Enable Save Button
             self.btn_save.config(state=tk.NORMAL)
 
+            # Store only prompt and size for metadata
+            self.saved_metadata = {
+                "prompt": prompt,
+                "size": image_size
+            }
+
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {e}")
 
     def display_image(self):
+        """Show the generated image in the GUI."""
         if self.generated_image:
             img_resized = self.generated_image.resize((256, 256))
             img_tk = ImageTk.PhotoImage(img_resized)
@@ -98,6 +106,7 @@ class DalleApp:
             self.image_label.image = img_tk  # Keep reference
 
     def save_image(self):
+        """Save generated image with metadata (only prompt and size)."""
         if not self.generated_image or not self.image_url:
             return
 
@@ -114,13 +123,14 @@ class DalleApp:
         if file_path:
             self.generated_image.save(file_path)
 
-            # Save Metadata with User Info
+            # Save Metadata with User Info and only prompt & size
             image_metadata = {
-                "prompt": self.entry_prompt.get().strip(),
                 "user": user_name,
                 "file_path": file_path,
                 "image_url": self.image_url,
-                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "prompt": self.saved_metadata["prompt"],
+                "size": self.saved_metadata["size"]
             }
             save_image_data(image_metadata)
 
