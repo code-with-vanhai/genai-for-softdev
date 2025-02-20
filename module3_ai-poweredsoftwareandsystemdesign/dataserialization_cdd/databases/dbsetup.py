@@ -1,10 +1,14 @@
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Float, DateTime
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 from datetime import datetime
+import logging
+
+# Disable SQLAlchemy INFO logs (only show warnings & errors)
+logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)
 
 # Database connection
 DATABASE_URL = "sqlite:///sqllite_sample.db"  # SQLite file-based database
-engine = create_engine(DATABASE_URL, echo=True)
+engine = create_engine(DATABASE_URL, echo=False)
 Base = declarative_base()
 
 # Users Table
@@ -35,7 +39,7 @@ class Order(Base):
 
     order_id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey("users.user_id"), nullable=False)
-    order_date = Column(DateTime, default=datetime.utcnow)
+    order_date = Column(DateTime, default=datetime.now)
 
     # Relationship: An order belongs to a user
     user = relationship("User", back_populates="orders")
@@ -56,6 +60,7 @@ class OrderItem(Base):
     order = relationship("Order", back_populates="order_items")
     product = relationship("Product", back_populates="order_items")
 
-# Create the database tables
-Base.metadata.create_all(engine)
-print("Database and tables created successfully.")
+# Create tables only when running this script
+if __name__ == "__main__":
+    Base.metadata.create_all(engine)
+    print("Database and tables created successfully.")
