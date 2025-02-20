@@ -8,23 +8,22 @@ session = Session()
 # Function to delete a user by user_id
 def delete_user(user_id: int):
     try:
-        # Find the user by ID
-        user = session.query(User).filter_by(user_id=user_id).first()
-
+        user = session.query(User).filter(User.user_id == user_id).first()
         if user:
-            session.delete(user)  # Delete the user
-            session.commit()  # Commit the transaction
+            session.delete(user)
+            session.commit()
             print(f"User ID {user_id} deleted successfully.")
             return True
         else:
             print(f"User with ID {user_id} not found.")
             return False
     except Exception as e:
-        session.rollback()  # Rollback changes if an error occurs
+        session.rollback()
         print("Error deleting user:", e)
         return False
     finally:
-        session.close()  # Close the session
+        session.close()
 
 # Example Usage
-delete_user(1)  # Delete user with ID 1
+delete_user(1)
+

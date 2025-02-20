@@ -8,10 +8,13 @@ session = Session()
 # Function to read a user by email or ID
 def get_user(identifier):
     try:
-        if isinstance(identifier, int):  # If searching by user_id
-            user = session.query(User).filter_by(user_id=identifier).first()
-        else:  # If searching by email
-            user = session.query(User).filter_by(email=identifier).first()
+        if isinstance(identifier, int):  # Search by user_id
+            user = session.query(User).filter(User.user_id == identifier).first()
+        elif isinstance(identifier, str):  # Search by email
+            user = session.query(User).filter(User.email == identifier).first()
+        else:
+            print("Invalid identifier type.")
+            return None
 
         if user:
             print(f"User Found: ID={user.user_id}, Name={user.name}, Email={user.email}")
@@ -21,14 +24,19 @@ def get_user(identifier):
             return None
     except Exception as e:
         print("Error reading user:", e)
+        return None
     finally:
-        session.close()  # Close the session
+        session.close()
+
+# Example Usage
+get_user("john@example.com")
+get_user(1)
+
 
 # Function to read all users
 def get_all_users():
     try:
-        users = session.query(User).all()  # Retrieve all users
-
+        users = session.query(User).all()
         if users:
             print("All Users:")
             for user in users:
@@ -39,12 +47,10 @@ def get_all_users():
             return []
     except Exception as e:
         print("Error reading users:", e)
+        return []
     finally:
-        session.close()  # Close the session
+        session.close()
 
 # Example Usage
 get_all_users()
 
-# Example Usage
-get_user("1john@example.com")  # Search by email
-get_user(1)  # Search by user_id
