@@ -40,3 +40,4 @@ This repository documents my learning journey in the **GenAI for Software Develo
 - **19/02/2025** - Create a simple database with SQLite & SQLAlchemy
 - **20/02/2025** - CRUD Operations with no security
 - **20/02/2025** - CRUD Operations with SQL Injection
+- **21/02/2025** - Optimization Database
