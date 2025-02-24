@@ -41,3 +41,4 @@ This repository documents my learning journey in the **GenAI for Software Develo
 - **20/02/2025** - CRUD Operations with no security
 - **20/02/2025** - CRUD Operations with SQL Injection
 - **21/02/2025** - Optimization Database
+- **24/02/2025** - Debugging Database

@@ -4,7 +4,12 @@ from datetime import datetime
 import logging
 
 # Disable SQLAlchemy INFO logs (only show warnings & errors)
-logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)
+logging.getLogger("sqlalchemy.engine").setLevel(logging.ERROR)
+
+error_handler = logging.FileHandler("sqlalchemy_errors.log")
+error_handler.setLevel(logging.ERROR)
+formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
+error_handler.setFormatter(formatter)
 
 # Database connection
 DATABASE_URL = "sqlite:///sqllite_sample.db"  # SQLite file-based database
